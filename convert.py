@@ -14,14 +14,14 @@ def convertImage(originName, method = 'binary'):
 			datOut += str(img.getpixel( (i, j) )) + ' '
 		datOut += '\n'
 	
-	file = open(originName + '.dat', 'w')
-	file.write(datOut)
-	file.close()
+	f = open(originName + '.dat', 'w')
+	f.write(datOut)
+	f.close()
 	
 if __name__ == '__main__':
 	method = raw_input('method: ')
 	files = os.listdir(os.getcwd())
-	for file in files:
+	for f in files:
 		if file.endswith('.bmp'):
 			convertImage(file, method)
 
